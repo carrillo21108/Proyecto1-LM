@@ -102,11 +102,13 @@ def p_expression(p):
 def p_error(p):
     print(f'Syntax error at {p.value!r}')
 
-# Build the parser
+# Construccion del Parser
 parser = yacc()
 
-# Parse an expression
+# Reconocimiento de expresion
 ast = parser.parse('((p→q)^p)')
+
+# Grafo dirigido
 tree_graph = plot_tree(ast)
 nombre_archivo_pdf = 'AST'
 tree_graph.view(filename=nombre_archivo_pdf)
